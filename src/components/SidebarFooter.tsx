@@ -3,10 +3,11 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import NewspaperIcon from "@mui/icons-material/Newspaper";
 import { Typography } from "./Typography";
 import packageJson from "../../package.json";
+import { useContext } from "react";
+import { LayoutContext } from "../context";
 
 interface SidebarFooterProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
-  collapsed?: boolean;
 }
 
 const StyledButton = styled.a`
@@ -47,14 +48,14 @@ const StyledCollapsedSidebarFooter = styled.a`
   /* background: #0098e5; */
 `;
 
-const codeUrl =
-  "https://github.com/azouaoui-med/react-pro-sidebar/blob/master/storybook/Playground.tsx";
+const codeUrl = "https://app.sma.gob.ar/inicio/";
 
 export const SidebarFooter: React.FC<SidebarFooterProps> = ({
   children,
-  collapsed,
   ...rest
 }) => {
+  const { collapsed } = useContext(LayoutContext);
+
   return (
     <div
       style={{
@@ -72,13 +73,15 @@ export const SidebarFooter: React.FC<SidebarFooterProps> = ({
           <div style={{ marginBottom: "12px" }}>
             <NewspaperIcon height={20} />
           </div>
-          <Typography fontWeight={600}>Banner</Typography>
+          <Typography fontWeight={600}>Banner informativo</Typography>
           <Typography
             variant="caption"
             style={{ letterSpacing: 1, opacity: 0.7 }}
           >
-            V {packageJson.version}
+            {/* V {packageJson.version} */}
+            Espacio informativo
           </Typography>
+          <br />
           <div style={{ marginTop: "16px" }}>
             <StyledButton href={codeUrl} target="_blank">
               <Typography variant="caption" color="#607489" fontWeight={600}>

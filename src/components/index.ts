@@ -1,3 +1,17 @@
+export { SidebarContainer } from "./SidebarContainer";
+
+export { Badge } from "./Badge";
+
+export { Footer } from "./Footer";
+
+export { SidebarConfig } from "./SidebarConfig";
+
+export { CardExample } from "./CardExample";
+
+export { FixedContainer } from "./FixedContainer";
+
+export { NavBar } from "./NavBar";
+
 export { SidebarMenu } from "./SidebarMenu";
 
 export { SidebarHeader } from "./SidebarHeader";
