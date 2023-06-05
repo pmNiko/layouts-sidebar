@@ -7,7 +7,7 @@ const StyledPackageBadges = styled.div`
   }
 `;
 
-export const PackageBadges = () => {
+const PackageBadges = () => {
   return (
     <StyledPackageBadges>
       <p>
@@ -63,3 +63,5 @@ export const PackageBadges = () => {
     </StyledPackageBadges>
   );
 };
+
+export default PackageBadges;

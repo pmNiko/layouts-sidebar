@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import React from 'react';
+import React from "react";
+import styled from "@emotion/styled";
 
 interface SwitchProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
@@ -24,7 +24,7 @@ const CheckBox = styled.div<{ checked?: boolean }>`
   height: 20px;
   border-radius: 30px;
 
-  background-color: ${({ checked }) => (checked ? '#0ed693' : '#dde0e7')};
+  background-color: ${({ checked }) => (checked ? "#0ed693" : "#dde0e7")};
 `;
 
 const CheckBoxCircle = styled.div<{ checked?: boolean }>`
@@ -37,10 +37,10 @@ const CheckBoxCircle = styled.div<{ checked?: boolean }>`
   background-color: #fff;
   transition: left 0.2s;
 
-  ${({ checked }) => (checked ? `left: 15px;` : '')}
+  ${({ checked }) => (checked ? `left: 15px;` : "")}
 `;
 
-export const Switch = ({ id, label, checked, ...rest }: SwitchProps) => {
+const Switch = ({ id, label, checked, ...rest }: SwitchProps) => {
   return (
     <CheckBoxWrapper>
       <CheckBox checked={checked}>
@@ -48,14 +48,14 @@ export const Switch = ({ id, label, checked, ...rest }: SwitchProps) => {
           id={id}
           type="checkbox"
           style={{
-            cursor: 'pointer',
-            position: 'absolute',
+            cursor: "pointer",
+            position: "absolute",
             top: 0,
             left: 0,
             right: 0,
             bottom: 0,
-            width: '32px',
-            height: '20px',
+            width: "32px",
+            height: "20px",
             opacity: 0,
             zIndex: 2,
           }}
@@ -68,3 +68,5 @@ export const Switch = ({ id, label, checked, ...rest }: SwitchProps) => {
     </CheckBoxWrapper>
   );
 };
+
+export default Switch;

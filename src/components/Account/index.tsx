@@ -1,3 +1,4 @@
+import * as React from "react";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
@@ -6,11 +7,10 @@ import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
-import * as React from "react";
 
 const settings = ["Perfil", "Salir"];
 
-function AccountSettings() {
+const AccountSettings = () => {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
@@ -65,5 +65,5 @@ function AccountSettings() {
       </Box>
     </Toolbar>
   );
-}
+};
 export default AccountSettings;

@@ -3,7 +3,7 @@ import { LayoutContext } from "../../context";
 import {
   FixedContainer,
   Footer,
-  NavBar,
+  Navbar,
   SidebarContainer,
 } from "../../components";
 import { LayoutProps } from "../../interfaces";
@@ -21,7 +21,7 @@ const ProtectedLayout = ({ children, version }: LayoutProps) => {
         <SidebarContainer />
 
         <StyledBodyContainer>
-          <NavBar />
+          <Navbar />
 
           <FixedContainer>{children}</FixedContainer>
         </StyledBodyContainer>

@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import RoomPreferencesIcon from "@mui/icons-material/RoomPreferences";
-import { LayoutContext } from "../context";
 import { MenuItem, SubMenu } from "react-pro-sidebar";
-import { Switch } from "./Switch";
+import { LayoutContext } from "../../context";
+import Switch from "../Switch";
 
-export const SidebarMenuPreferences = () => {
+const SidebarPreferences = () => {
   const {
     switchCollapsed,
     collapsed,
@@ -65,3 +65,5 @@ export const SidebarMenuPreferences = () => {
     </SubMenu>
   );
 };
+
+export default SidebarPreferences;

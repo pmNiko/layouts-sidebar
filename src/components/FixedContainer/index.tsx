@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
 
-export const FixedContainer = ({ children }: { children: JSX.Element }) => {
+const FixedContainer = ({ children }: { children: JSX.Element }) => {
   return (
     <>
       <CssBaseline />
@@ -40,3 +40,5 @@ export const FixedContainer = ({ children }: { children: JSX.Element }) => {
     </>
   );
 };
+
+export default FixedContainer;

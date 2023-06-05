@@ -13,7 +13,7 @@ export interface FooterProps {
   version: string;
 }
 
-export const Footer = ({ version }: FooterProps) => {
+const Footer = ({ version }: FooterProps) => {
   const { theme } = useContext(LayoutContext);
 
   return (
@@ -73,3 +73,5 @@ export const Footer = ({ version }: FooterProps) => {
     </Box>
   );
 };
+
+export default Footer;

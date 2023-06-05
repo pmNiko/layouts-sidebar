@@ -1,12 +1,11 @@
-import { Box, Typography } from "@mui/material";
-import { StyledLogo } from "./SidebarHeader";
-import AccountSettings from "./Account";
-
 import { useContext } from "react";
-import { LayoutContext } from "../context";
-import logo from "../assets/logo.png";
+import { Box, Typography } from "@mui/material";
+import { LayoutContext } from "../../context";
+import { StyledLogo } from "../SidebarHeader";
+import AccountSettings from "../Account";
+import logo from "../../assets/logo.png";
 
-export const NavBar = () => {
+const Navbar = () => {
   const { broken, switchToggled, theme } = useContext(LayoutContext);
 
   return (
@@ -54,3 +53,5 @@ export const NavBar = () => {
     </Box>
   );
 };
+
+export default Navbar;

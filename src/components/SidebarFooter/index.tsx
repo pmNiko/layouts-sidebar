@@ -1,10 +1,8 @@
-import styled from "@emotion/styled";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import NewspaperIcon from "@mui/icons-material/Newspaper";
-import { Typography } from "./Typography";
-import packageJson from "../../package.json";
 import { useContext } from "react";
-import { LayoutContext } from "../context";
+import styled from "@emotion/styled";
+import NewspaperIcon from "@mui/icons-material/Newspaper";
+import { LayoutContext } from "../../context";
+import Typography from "../Typography";
 
 interface SidebarFooterProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
@@ -50,10 +48,7 @@ const StyledCollapsedSidebarFooter = styled.a`
 
 const codeUrl = "https://app.sma.gob.ar/inicio/";
 
-export const SidebarFooter: React.FC<SidebarFooterProps> = ({
-  children,
-  ...rest
-}) => {
+const SidebarFooter: React.FC<SidebarFooterProps> = ({ children, ...rest }) => {
   const { collapsed } = useContext(LayoutContext);
 
   return (
@@ -94,3 +89,5 @@ export const SidebarFooter: React.FC<SidebarFooterProps> = ({
     </div>
   );
 };
+
+export default SidebarFooter;

@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { Switch } from "./Switch";
-import { LayoutContext } from "../context";
+import { LayoutContext } from "../../context";
+import Switch from "../Switch";
 
-export const SidebarConfig = () => {
+const SidebarConfig = () => {
   const {
     collapsed,
     rtl,
@@ -54,3 +54,5 @@ export const SidebarConfig = () => {
     </div>
   );
 };
+
+export default SidebarConfig;

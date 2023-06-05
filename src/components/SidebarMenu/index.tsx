@@ -1,17 +1,17 @@
+import { Menu, MenuItem, MenuItemStyles, SubMenu } from "react-pro-sidebar";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import BookIcon from "@mui/icons-material/Book";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import DiamondIcon from "@mui/icons-material/Diamond";
 import PublicIcon from "@mui/icons-material/Public";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Menu, MenuItem, MenuItemStyles, SubMenu } from "react-pro-sidebar";
-import { Badge } from "./Badge";
+import Badge from "../Badge";
 
 interface Props {
   menuItemStyles: MenuItemStyles;
 }
 
-export const SidebarMenu = ({ menuItemStyles }: Props) => {
+const SidebarMenu = ({ menuItemStyles }: Props) => {
   return (
     <Menu menuItemStyles={menuItemStyles}>
       <MenuItem icon={<BookIcon />}>Documentation</MenuItem>
@@ -56,3 +56,5 @@ export const SidebarMenu = ({ menuItemStyles }: Props) => {
     </Menu>
   );
 };
+
+export default SidebarMenu;

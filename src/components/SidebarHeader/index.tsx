@@ -1,9 +1,9 @@
-import styled from "@emotion/styled";
 import React, { useContext } from "react";
-import { Typography } from "./Typography";
+import styled from "@emotion/styled";
 
-import logo from "../assets/logo.png";
-import { LayoutContext } from "../context";
+import logo from "../../assets/logo.png";
+import { LayoutContext } from "../../context";
+import Typography from "../Typography";
 
 interface SidebarHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
@@ -49,7 +49,7 @@ export const StyledLogo = styled.div<{ rtl?: boolean }>`
       `}
 `;
 
-export const SidebarHeader: React.FC<SidebarHeaderProps> = ({
+const SidebarHeader: React.FC<SidebarHeaderProps> = ({
   children,
   title,
   ...rest
@@ -90,3 +90,5 @@ export const SidebarHeader: React.FC<SidebarHeaderProps> = ({
     </StyledSidebarHeader>
   );
 };
+
+export default SidebarHeader;
