@@ -36,7 +36,7 @@ const AccountSettings = () => {
             >
               Castro Natalia Romina
             </Typography>
-            <AccountCircleIcon fontSize="large" sx={{ color: "white" }} />
+            <AccountCircleIcon sx={{ color: "white", fontSize: "1.2em" }} />
           </IconButton>
         </Tooltip>
         <Menu
