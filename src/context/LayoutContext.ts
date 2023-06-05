@@ -14,7 +14,7 @@ interface LayoutContextProps extends LayoutState {
   // Methods
   switchCollapsed: () => void;
   switchToggled: () => void;
-  switchBroken: () => void;
+  switchBroken: (value: boolean) => void;
   switchRtl: () => void;
   switchHasImage: () => void;
   switchTheme: (theme: Theme) => void;

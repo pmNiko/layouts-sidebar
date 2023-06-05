@@ -72,7 +72,7 @@ const SidebarContainer: React.FC = () => {
   };
 
   useEffect(() => {
-    switchBroken();
+    switchBroken(handlerBroken);
   }, [handlerBroken]);
 
   return (

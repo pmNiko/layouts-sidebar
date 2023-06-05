@@ -4,7 +4,7 @@ import { LayoutState } from "./LayoutContext";
 type LayoutActions =
   | { type: "collapsed" }
   | { type: "toggled" }
-  | { type: "broken" }
+  | { type: "broken"; payload: boolean }
   | { type: "rtl" }
   | { type: "hasImage" }
   | { type: "theme"; payload: Theme };
@@ -27,7 +27,7 @@ export const layoutReducer = (
     case "broken":
       return {
         ...state,
-        broken: !state.broken,
+        broken: action.payload,
       };
     case "rtl":
       return {

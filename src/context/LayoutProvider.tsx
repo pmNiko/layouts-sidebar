@@ -23,7 +23,8 @@ export const LayoutProvider = ({ children }: Props) => {
 
   const switchCollapsed = () => dispatch({ type: "collapsed" });
   const switchToggled = () => dispatch({ type: "toggled" });
-  const switchBroken = () => dispatch({ type: "broken" });
+  const switchBroken = (value: boolean) =>
+    dispatch({ type: "broken", payload: value });
   const switchRtl = () => dispatch({ type: "rtl" });
   const switchHasImage = () => dispatch({ type: "hasImage" });
   const switchTheme = (theme: "light" | "dark") =>

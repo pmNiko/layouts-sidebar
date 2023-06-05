@@ -1,5 +1,6 @@
 import * as React from "react";
 import Avatar from "@mui/material/Avatar";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
@@ -28,10 +29,14 @@ const AccountSettings = () => {
       <Box sx={{ flexGrow: 0, mr: 2, ml: 2, mt: 0.5 }}>
         <Tooltip title="Open settings">
           <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-            <Avatar
-              alt="Remy Sharp"
-              src="https://mui.com/static/images/avatar/2.jpg"
-            />
+            <Typography
+              variant="subtitle2"
+              sx={{ color: "white", fontWeight: "bold" }}
+              mr={2}
+            >
+              Castro Natalia Romina
+            </Typography>
+            <AccountCircleIcon fontSize="large" sx={{ color: "white" }} />
           </IconButton>
         </Tooltip>
         <Menu
