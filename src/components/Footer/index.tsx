@@ -7,7 +7,7 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
-import { LayoutContext } from "../context";
+import { LayoutContext } from "../../context";
 
 export interface FooterProps {
   version: string;
@@ -15,6 +15,7 @@ export interface FooterProps {
 
 export const Footer = ({ version }: FooterProps) => {
   const { theme } = useContext(LayoutContext);
+
   return (
     <Box
       sx={{
