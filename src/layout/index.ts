@@ -1,3 +1,3 @@
-import ProviderLayoutContainer from "./ProviderLayoutContainer";
+import ProtectedLayout from "./ProtectedLayout";
 
-export { ProviderLayoutContainer };
+export { ProtectedLayout };

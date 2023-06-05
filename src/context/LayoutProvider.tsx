@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useState, useEffect } from "react";
 import { LayoutContext, LayoutState } from "./LayoutContext";
 import { layoutReducer } from "./layoutReducer";
 
@@ -17,6 +17,7 @@ interface Props {
 
 export const LayoutProvider = ({ children }: Props) => {
   const [state, dispatch] = useReducer(layoutReducer, INITIAL_STATE);
+  const [themeIsDark, setThemeIsDark] = useState(state.theme === "dark");
 
   const switchCollapsed = () => dispatch({ type: "collapsed" });
   const switchToggled = () => dispatch({ type: "toggled" });
@@ -25,6 +26,10 @@ export const LayoutProvider = ({ children }: Props) => {
   const switchHasImage = () => dispatch({ type: "hasImage" });
   const switchTheme = (theme: "light" | "dark") =>
     dispatch({ type: "theme", payload: theme });
+
+  useEffect(() => {
+    setThemeIsDark(state.theme === "dark");
+  }, [state.theme]);
 
   return (
     <LayoutContext.Provider
@@ -36,6 +41,7 @@ export const LayoutProvider = ({ children }: Props) => {
         switchRtl,
         switchHasImage,
         switchTheme,
+        themeIsDark,
       }}
     >
       {children}
