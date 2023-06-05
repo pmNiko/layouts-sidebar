@@ -16,7 +16,9 @@ interface Props {
 }
 
 export const LayoutProvider = ({ children }: Props) => {
-  const [state, dispatch] = useReducer(layoutReducer, INITIAL_STATE);
+  const configState = localStorage.getItem("configState");
+  const config = !!configState ? JSON.parse(configState) : INITIAL_STATE;
+  const [state, dispatch] = useReducer(layoutReducer, config);
   const [themeIsDark, setThemeIsDark] = useState(state.theme === "dark");
 
   const switchCollapsed = () => dispatch({ type: "collapsed" });
@@ -30,6 +32,10 @@ export const LayoutProvider = ({ children }: Props) => {
   useEffect(() => {
     setThemeIsDark(state.theme === "dark");
   }, [state.theme]);
+
+  useEffect(() => {
+    localStorage.setItem("configState", JSON.stringify(state));
+  }, [state]);
 
   return (
     <LayoutContext.Provider
