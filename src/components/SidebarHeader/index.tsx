@@ -1,55 +1,16 @@
-import styled from "@emotion/styled";
 import React, { useContext } from "react";
-import { Typography } from "./Typography";
 
-import logo from "../assets/logo.png";
-import { LayoutContext } from "../context";
+import { LayoutContext } from "../../context";
+import Typography from "../Typography";
+import { StyledLogo, StyledSidebarHeader } from "./StyledComponents";
+import logo from "../../assets/logo.png";
 
 interface SidebarHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
   title: string;
 }
 
-const StyledSidebarHeader = styled.div`
-  height: 64px;
-  min-height: 64px;
-  display: flex;
-  align-items: center;
-  padding: 1em;
-
-  > div {
-    width: 100%;
-    overflow: hidden;
-  }
-`;
-
-export const StyledLogo = styled.div<{ rtl?: boolean }>`
-  width: 35px;
-  min-width: 35px;
-  height: 35px;
-  min-height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  color: white;
-  font-size: 24px;
-  font-weight: 700;
-  background-color: #009fdb;
-  background: linear-gradient(45deg, rgb(21 87 205) 0%, rgb(90 225 255) 100%);
-  ${({ rtl }) =>
-    rtl
-      ? `
-      margin-left: 10px;
-      margin-right: 4px;
-      `
-      : `
-      margin-right: 10px;
-      margin-left: 4px;
-      `}
-`;
-
-export const SidebarHeader: React.FC<SidebarHeaderProps> = ({
+const SidebarHeader: React.FC<SidebarHeaderProps> = ({
   children,
   title,
   ...rest
@@ -90,3 +51,5 @@ export const SidebarHeader: React.FC<SidebarHeaderProps> = ({
     </StyledSidebarHeader>
   );
 };
+
+export default SidebarHeader;

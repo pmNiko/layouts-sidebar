@@ -1,59 +1,20 @@
-import styled from "@emotion/styled";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import NewspaperIcon from "@mui/icons-material/Newspaper";
-import { Typography } from "./Typography";
-import packageJson from "../../package.json";
 import { useContext } from "react";
-import { LayoutContext } from "../context";
+import NewspaperIcon from "@mui/icons-material/Newspaper";
+import { LayoutContext } from "../../context";
+import Typography from "../Typography";
+import {
+  StyledButton,
+  StyledCollapsedSidebarFooter,
+  StyledSidebarFooter,
+} from "./StyledComponents";
 
 interface SidebarFooterProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
 }
 
-const StyledButton = styled.a`
-  padding: 5px 16px;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-  display: inline-block;
-  background-color: #fff;
-  color: #484848;
-  text-decoration: none;
-`;
-
-const StyledSidebarFooter = styled.div`
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  border-radius: 8px;
-  color: white;
-  background: linear-gradient(45deg, rgb(21 87 205) 0%, rgb(90 225 255) 100%);
-  /* background: #0098e5; */
-`;
-
-const StyledCollapsedSidebarFooter = styled.a`
-  width: 40px;
-  height: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-radius: 50%;
-  color: white;
-  background: linear-gradient(45deg, rgb(21 87 205) 0%, rgb(90 225 255) 100%);
-  /* background: #0098e5; */
-`;
-
 const codeUrl = "https://app.sma.gob.ar/inicio/";
 
-export const SidebarFooter: React.FC<SidebarFooterProps> = ({
-  children,
-  ...rest
-}) => {
+const SidebarFooter: React.FC<SidebarFooterProps> = ({ children, ...rest }) => {
   const { collapsed } = useContext(LayoutContext);
 
   return (
@@ -78,7 +39,6 @@ export const SidebarFooter: React.FC<SidebarFooterProps> = ({
             variant="caption"
             style={{ letterSpacing: 1, opacity: 0.7 }}
           >
-            {/* V {packageJson.version} */}
             Espacio informativo
           </Typography>
           <br />
@@ -94,3 +54,5 @@ export const SidebarFooter: React.FC<SidebarFooterProps> = ({
     </div>
   );
 };
+
+export default SidebarFooter;

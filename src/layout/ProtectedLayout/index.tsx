@@ -1,5 +1,5 @@
-import { LayoutProvider } from "../context";
-import { LayoutProps } from "../interfaces";
+import { LayoutProvider } from "../../context";
+import { LayoutProps } from "../../interfaces";
 import ProtectedLayout from "./ProtectedLayout";
 
 function ProviderLayoutContainer({ children, version }: LayoutProps) {

@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import RoomPreferencesIcon from "@mui/icons-material/RoomPreferences";
-import { LayoutContext } from "../context";
 import { MenuItem, SubMenu } from "react-pro-sidebar";
-import { Switch } from "./Switch";
+import { LayoutContext } from "../../context";
+import Switch from "../Switch";
+import { StyledSwitchContainer } from "./StyledComponents";
 
-export const SidebarMenuPreferences = () => {
+const SidebarPreferences = () => {
   const {
     switchCollapsed,
     collapsed,
@@ -23,45 +24,47 @@ export const SidebarMenuPreferences = () => {
   return (
     <SubMenu label="Preferencias" icon={<RoomPreferencesIcon />}>
       <MenuItem>
-        <div style={{ marginBottom: 16, marginTop: "2em" }}>
+        <StyledSwitchContainer>
           <Switch
             id="theme"
             checked={theme === "dark"}
             onChange={handleThemeChange}
             label="Cambiar tema"
           />
-        </div>
+        </StyledSwitchContainer>
       </MenuItem>
       <MenuItem>
-        <div style={{ marginBottom: 16, marginTop: "2em" }}>
+        <StyledSwitchContainer>
           <Switch
             id="image"
             checked={hasImage}
             onChange={switchHasImage}
             label="Image"
           />
-        </div>
+        </StyledSwitchContainer>
       </MenuItem>
       <MenuItem>
-        <div style={{ marginBottom: 16, marginTop: "2em" }}>
+        <StyledSwitchContainer>
           <Switch
             id="rtl"
             checked={rtl}
             onChange={switchRtl}
             label="Posición"
           />
-        </div>
+        </StyledSwitchContainer>
       </MenuItem>
       <MenuItem>
-        <div style={{ marginBottom: 16, marginTop: "2em" }}>
+        <StyledSwitchContainer>
           <Switch
             id="collapse"
             checked={collapsed}
             onChange={switchCollapsed}
             label="Colapsar"
           />
-        </div>
+        </StyledSwitchContainer>
       </MenuItem>
     </SubMenu>
   );
 };
+
+export default SidebarPreferences;

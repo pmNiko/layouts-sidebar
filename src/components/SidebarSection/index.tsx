@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { Typography } from "@mui/material";
-import { LayoutContext } from "../context";
+import { LayoutContext } from "../../context";
 
 interface Props {
   label: string;
   [x: string]: any;
 }
 
-export const SidebarSection = ({ label, ...props }: Props) => {
+const SidebarSection = ({ label, ...props }: Props) => {
   const { collapsed } = useContext(LayoutContext);
 
   return (
@@ -22,3 +22,5 @@ export const SidebarSection = ({ label, ...props }: Props) => {
     </div>
   );
 };
+
+export default SidebarSection;

@@ -1,9 +1,9 @@
 import { CardExample } from "./components";
-import { ProviderLayoutContainer } from "./layout";
+import { ProtectedLayout } from "./layout";
 
 function App() {
   return (
-    <ProviderLayoutContainer version="1.0.0">
+    <ProtectedLayout version="1.0.0">
       <>
         <br />
         <CardExample />
@@ -15,7 +15,7 @@ function App() {
         <CardExample />
         <br />
       </>
-    </ProviderLayoutContainer>
+    </ProtectedLayout>
   );
 }
 

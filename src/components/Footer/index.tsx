@@ -1,30 +1,18 @@
-import { useContext } from "react";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import {
-  Box,
-  FormControlLabel,
-  Grid,
-  IconButton,
-  Typography,
-} from "@mui/material";
-import { LayoutContext } from "../context";
+import { FormControlLabel, Grid, IconButton, Typography } from "@mui/material";
+import { useContext } from "react";
+import { LayoutContext } from "../../context";
+import { StyledFooter } from "./StyledComponents";
 
 export interface FooterProps {
   version: string;
 }
 
-export const Footer = ({ version }: FooterProps) => {
-  const { theme } = useContext(LayoutContext);
+const Footer = ({ version }: FooterProps) => {
+  const { themeIsDark } = useContext(LayoutContext);
+
   return (
-    <Box
-      sx={{
-        height: "14rem",
-        background: `${theme === "light" ? "#2ea3f2" : "#0b2948"}`,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-around",
-      }}
-    >
+    <StyledFooter theme={themeIsDark}>
       <Grid container my={3}>
         <Grid
           item
@@ -54,7 +42,7 @@ export const Footer = ({ version }: FooterProps) => {
                 href="mailto:consultas.rentas@smandes.gob.ar"
               >
                 <IconButton
-                  sx={{ color: `${theme === "light" ? "blue" : "#1976d2"}` }}
+                  sx={{ color: `${themeIsDark ? "#1976d2" : "blue"}` }}
                 >
                   <MailOutlineIcon />
                 </IconButton>
@@ -62,13 +50,15 @@ export const Footer = ({ version }: FooterProps) => {
             }
             label={"consultas.rentas@smandes.gob.ar"}
             labelPlacement="end"
-            sx={{ color: `${theme === "light" ? "blue" : "#1976d2"}` }}
+            sx={{ color: `${themeIsDark ? "#1976d2" : "blue"}` }}
           />
         </Grid>
         <Grid item xs={12} textAlign="center" fontSize={13} color="white">
           versión {version}
         </Grid>
       </Grid>
-    </Box>
+    </StyledFooter>
   );
 };
+
+export default Footer;

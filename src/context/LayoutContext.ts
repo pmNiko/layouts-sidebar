@@ -18,6 +18,7 @@ interface LayoutContextProps extends LayoutState {
   switchRtl: () => void;
   switchHasImage: () => void;
   switchTheme: (theme: Theme) => void;
+  themeIsDark: boolean;
 }
 
 export const LayoutContext = createContext({} as LayoutContextProps);

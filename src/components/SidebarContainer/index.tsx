@@ -8,27 +8,24 @@ import {
   Sidebar,
   menuClasses,
 } from "react-pro-sidebar";
-import {
-  SidebarFooter,
-  SidebarHeader,
-  SidebarMenu,
-  SidebarSection,
-} from "../components";
 
-import { themes } from "../Theme";
-import { LayoutContext } from "../context";
-import { hexToRgba } from "../utils";
-import { SidebarMenuPreferences } from "./SidebarMenuPreferences";
 import backgroung_image from "/municipio.jpg";
+import { LayoutContext } from "../../context";
+import { themes } from "../../Theme";
+import { hexToRgba } from "../../utils";
+import SidebarMenuPreferences from "../Preferences";
+import SidebarHeader from "../SidebarHeader";
+import SidebarSection from "../SidebarSection";
+import SidebarMenu from "../SidebarMenu";
+import SidebarFooter from "../SidebarFooter";
 
-export const SidebarContainer: React.FC = () => {
+const SidebarContainer: React.FC = () => {
   const {
     collapsed,
     toggled,
     hasImage,
     rtl,
     theme,
-    broken,
     switchToggled,
     switchBroken,
   } = useContext(LayoutContext);
@@ -122,3 +119,5 @@ export const SidebarContainer: React.FC = () => {
     </Sidebar>
   );
 };
+
+export default SidebarContainer;
