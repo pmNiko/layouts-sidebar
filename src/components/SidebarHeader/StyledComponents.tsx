@@ -1,18 +1,16 @@
 import styled from "@emotion/styled";
-import Box from "@mui/material/Box";
 
-export const StyledNavbar = styled(Box)<{ theme: boolean }>`
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  color: white;
+export const StyledSidebarHeader = styled.div`
+  height: 64px;
+  min-height: 64px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  padding: 1em;
 
-  ${({ theme }) =>
-    theme ? `background-color: #0b2948;` : `background-color: #2ea3f2;`}
+  > div {
+    width: 100%;
+    overflow: hidden;
+  }
 `;
 
 export const StyledLogo = styled.div<{ rtl?: boolean }>`

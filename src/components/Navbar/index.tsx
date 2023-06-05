@@ -1,26 +1,15 @@
+import { Typography } from "@mui/material";
 import { useContext } from "react";
-import { Box, Typography } from "@mui/material";
 import { LayoutContext } from "../../context";
-import { StyledLogo } from "../SidebarHeader";
 import AccountSettings from "../Account";
+import { StyledLogo, StyledNavbar } from "./StyledComponents";
 import logo from "../../assets/logo.png";
 
 const Navbar = () => {
-  const { broken, switchToggled, theme } = useContext(LayoutContext);
+  const { broken, switchToggled, themeIsDark } = useContext(LayoutContext);
 
   return (
-    <Box
-      px={2}
-      py={0.8}
-      style={{
-        backgroundColor: `${theme === "light" ? "#2ea3f2" : "#0b2948"}`,
-        // padding: "1em",
-        color: "white",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
+    <StyledNavbar theme={themeIsDark}>
       {broken ? (
         <StyledLogo
           onClick={switchToggled}
@@ -50,7 +39,7 @@ const Navbar = () => {
       )}
 
       <AccountSettings />
-    </Box>
+    </StyledNavbar>
   );
 };
 
