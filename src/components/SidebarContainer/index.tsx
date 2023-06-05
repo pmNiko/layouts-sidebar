@@ -93,18 +93,18 @@ const SidebarContainer: React.FC = () => {
       }}
       style={{ borderRightWidth: "0px" }}
     >
-      <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+      <div style={{ display: "flex", flexDirection: "column", height: "95%" }}>
         <SidebarHeader
           style={{ marginBottom: "24px", marginTop: "0.5em" }}
           title="Oficina Virtual"
         />
 
-        <div style={{ flex: 1, marginBottom: "32px" }}>
+        <div style={{ flex: 1, marginBottom: "2em" }}>
           <SidebarSection label="General" />
 
           <SidebarMenu menuItemStyles={menuItemStyles} />
 
-          <SidebarSection label="Extras" paddingTop="2rem" />
+          <SidebarSection label="Extras" paddingTop="2em" />
 
           <Menu menuItemStyles={menuItemStyles}>
             <SidebarMenuPreferences />
